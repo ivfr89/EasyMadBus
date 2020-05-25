@@ -5,6 +5,42 @@ buildscript {
 
     ext {
 
+        referenceVersionCode = 1
+        referenceVersionName = "1.0.0"
+
+        getCustomVersionName = { referenceVersionName ->
+
+            def finalVersionName = referenceVersionName
+
+            def bitriseBuild = System.getenv()["BITRISE_BUID"]
+
+            if(bitriseBuild){
+                def buildNumber = System.getenv()["BITRISE_BUILD_NUMBER"]
+                finalVersionName = finalVersionName + "." + buildNumber
+            }else{
+                finalVersionName = finalVersionName + ".LOCAL"
+            }
+
+            return finalVersionName
+
+        }
+
+        getCustomVersionCode = { referenceVersionCode ->
+
+            def referenceVersionMultiplier = 10000
+            def finalVersionCode = referenceVersionCode * referenceVersionMultiplier
+
+            def bitriseBuild = System.getenv()["BITRISE_BUID"]
+
+            if(bitriseBuild){
+                def buildNumber = System.getenv()["BITRISE_BUILD_NUMBER"]
+                finalVersionCode = finalVersionCode + Integer.valueOf(buildNumber)
+            }
+
+            return finalVersionCode
+
+        }
+
         kotlin_version = '1.3.61'
         glide_version = '4.10.0'
         app_compat_version = '1.1.0'
