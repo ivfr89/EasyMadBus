@@ -12,7 +12,7 @@ buildscript {
 
             def finalVersionName = referenceVersionName
 
-            def bitriseBuild = System.getenv()["BITRISE_BUIlD"]
+            def bitriseBuild = System.getenv()["BITRISE_BUILD"]
 
             if(bitriseBuild){
                 def buildNumber = System.getenv()["BITRISE_BUILD_NUMBER"]
@@ -30,7 +30,7 @@ buildscript {
             def referenceVersionMultiplier = 10000
             def finalVersionCode = referenceVersionCode * referenceVersionMultiplier
 
-            def bitriseBuild = System.getenv()["BITRISE_BUIlD"]
+            def bitriseBuild = System.getenv()["BITRISE_BUILD"]
 
             if(bitriseBuild){
                 def buildNumber = System.getenv()["BITRISE_BUILD_NUMBER"]
