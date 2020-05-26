@@ -6,7 +6,7 @@ buildscript {
     ext {
 
         referenceVersionCode = 2
-        referenceVersionName = "1.1.1"
+        referenceVersionName = "1.1.1.1"
 
         getCustomVersionName = { referenceVersionName ->
 
