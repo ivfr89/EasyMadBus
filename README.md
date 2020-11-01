@@ -20,3 +20,5 @@ Simplificando los tiempos de espera de buses en Madrid
 ####  Compatibilidad con modo oscuro
 
 ![](images/screen7.png)
+
+#### Ahora compatible con GitHub Actions
