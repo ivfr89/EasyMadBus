@@ -31,8 +31,10 @@ jobs:
           java-version: 1.8
       - name: Build debug APK
         run: bash ./gradlew assembleDebug --stacktrace
+      - name: Output List
+        run: bash ls -l app/build/outputs/apk/debug/*
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
           name: app
-          path: app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/debug/*
